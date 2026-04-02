@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // Handle SPA redirect from 404.html
+      (function() {
+        var redirect = sessionStorage.getItem('redirect');
+        if (redirect) {
+          sessionStorage.removeItem('redirect');
+          if (redirect !== '/') {
+            window.history.replaceState(null, null, '/cloudsheer-consulting' + redirect);
+          }
+        }
+      })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/cloudsheer-consulting/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Cloudsheer Consulting — Certified Salesforce Partner specialising in Salesforce implementation and Agentforce AI solutions." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <title>Cloudsheer Consulting | Salesforce & Agentforce Partner</title>
+    <script type="module" crossorigin src="/cloudsheer-consulting/assets/index-BjqgkCpX.js"></script>
+    <link rel="stylesheet" crossorigin href="/cloudsheer-consulting/assets/index-C8IOxhjd.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
