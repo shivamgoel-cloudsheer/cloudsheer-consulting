@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle2, Bot } from 'lucide-react'
+import { useState, useEffect } from 'react'
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle2, Bot, Calendar } from 'lucide-react'
 
 const contactInfo = [
   { icon: <Mail className="w-4 h-4" />,  label: 'Email',    value: 'hello@cloudsheer.com' },
@@ -87,6 +87,55 @@ function ContactForm() {
   )
 }
 
+function CalEmbed() {
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.type = 'text/javascript'
+    script.innerHTML = `
+      (function (C, A, L) {
+        let p = function (a, ar) { a.q.push(ar); };
+        let d = C.document;
+        C.Cal = C.Cal || function () {
+          let cal = C.Cal; let ar = arguments;
+          if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; }
+          if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["-initNamespace", namespace]);} else p(cal, ar); return; }
+          p(cal, ar);
+        };
+      })(window, "https://app.cal.com/embed/embed.js", "init");
+      Cal("init", { origin: "https://cal.com" });
+      Cal("inline", {
+        elementOrSelector: "#cal-inline",
+        calLink: "cloudsheer-consulting/30min",
+        layout: "month_view"
+      });
+      Cal("ui", {
+        styles: { branding: { brandColor: "#0176D3" } },
+        hideEventTypeDetails: false,
+        layout: "month_view"
+      });
+    `
+    document.head.appendChild(script)
+    return () => { document.head.removeChild(script) }
+  }, [])
+
+  return (
+    <div className="glass-card overflow-hidden">
+      <div className="flex items-center gap-3 px-6 pt-6 pb-4"
+        style={{ borderBottom: '1px solid rgba(1,118,211,0.08)' }}>
+        <div className="w-9 h-9 rounded-xl flex items-center justify-center"
+          style={{ backgroundColor: 'rgba(1,118,211,0.10)', color: '#0176D3' }}>
+          <Calendar className="w-4 h-4" />
+        </div>
+        <div>
+          <p className="font-bold text-sm" style={{ color: '#032D60' }}>Book a Free 30-Min Discovery Call</p>
+          <p className="text-xs" style={{ color: '#64748B' }}>Pick a time that works for you — no commitment</p>
+        </div>
+      </div>
+      <div id="cal-inline" style={{ width: '100%', height: '600px', overflow: 'scroll' }} />
+    </div>
+  )
+}
+
 export default function Contact() {
   return (
     <>
@@ -106,7 +155,14 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="py-20 bg-cs-bgsub">
+      {/* Cal.com embed */}
+      <section className="py-16" style={{ backgroundColor: '#EFF6FF' }}>
+        <div className="section-wrap max-w-4xl mx-auto">
+          <CalEmbed />
+        </div>
+      </section>
+
+      <section className="py-20 bg-white">
         <div className="section-wrap grid lg:grid-cols-5 gap-10">
           {/* Sidebar */}
           <div className="lg:col-span-2 space-y-5">
