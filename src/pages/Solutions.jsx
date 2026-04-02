@@ -209,9 +209,9 @@ function CTA() {
         <p className="text-blue-200 mb-8">
           Book a free discovery call and we'll design an Agentforce blueprint for your business — no commitment required.
         </p>
-        <Link to="/contact" className="btn-gold text-base px-8 py-4">
+        <a href="https://cal.com/cloudsheer-consulting/30min" target="_blank" rel="noopener noreferrer" className="btn-gold text-base px-8 py-4">
           Book Free Discovery Call <ArrowRight className="w-5 h-5" />
-        </Link>
+        </a>
       </div>
     </section>
   )

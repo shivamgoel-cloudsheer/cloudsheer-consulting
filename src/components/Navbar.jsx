@@ -216,7 +216,7 @@ export default function Navbar() {
             title="Certified Salesforce Partner"
           />
           <Link to="/contact" className="btn-ghost text-sm px-5 py-2">Contact</Link>
-          <Link to="/contact" className="btn-primary text-sm px-5 py-2">Free Consultation</Link>
+          <a href="https://cal.com/cloudsheer-consulting/30min" target="_blank" rel="noopener noreferrer" className="btn-primary text-sm px-5 py-2">Free Consultation</a>
         </div>
 
         {/* Mobile burger */}

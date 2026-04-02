@@ -27,7 +27,7 @@ const cols = [
       { label: 'Blog & Insights',   to: '/blog' },
       { label: 'Careers',           to: '/careers' },
       { label: 'Contact',           to: '/contact' },
-      { label: 'Free Consultation', to: '/contact' },
+      { label: 'Free Consultation', to: 'https://cal.com/cloudsheer-consulting/30min', external: true },
     ],
   },
 ]
@@ -46,9 +46,9 @@ export default function Footer() {
               Book a free 30-min Agentforce discovery call with our team.
             </p>
           </div>
-          <Link to="/contact" className="btn-gold shrink-0 animate-bounce-x">
+          <a href="https://cal.com/cloudsheer-consulting/30min" target="_blank" rel="noopener noreferrer" className="btn-gold shrink-0 animate-bounce-x">
             Book Free Call <ArrowRight className="w-4 h-4" />
-          </Link>
+          </a>
         </div>
       </div>
 
@@ -111,16 +111,27 @@ export default function Footer() {
             <div key={heading}>
               <p className="text-white text-sm font-semibold mb-4">{heading}</p>
               <ul className="space-y-2.5">
-                {links.map(({ label, to }) => (
+                {links.map(({ label, to, external }) => (
                   <li key={label}>
-                    <Link to={to}
-                      className="text-sm transition-colors duration-200"
-                      style={{ color: 'rgba(148,196,255,0.70)' }}
-                      onMouseEnter={e => e.currentTarget.style.color = '#ffffff'}
-                      onMouseLeave={e => e.currentTarget.style.color = 'rgba(148,196,255,0.70)'}
-                    >
-                      {label}
-                    </Link>
+                    {external ? (
+                      <a href={to} target="_blank" rel="noopener noreferrer"
+                        className="text-sm transition-colors duration-200"
+                        style={{ color: 'rgba(148,196,255,0.70)' }}
+                        onMouseEnter={e => e.currentTarget.style.color = '#ffffff'}
+                        onMouseLeave={e => e.currentTarget.style.color = 'rgba(148,196,255,0.70)'}
+                      >
+                        {label}
+                      </a>
+                    ) : (
+                      <Link to={to}
+                        className="text-sm transition-colors duration-200"
+                        style={{ color: 'rgba(148,196,255,0.70)' }}
+                        onMouseEnter={e => e.currentTarget.style.color = '#ffffff'}
+                        onMouseLeave={e => e.currentTarget.style.color = 'rgba(148,196,255,0.70)'}
+                      >
+                        {label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
