@@ -105,7 +105,7 @@ function CalEmbed() {
       Cal("init", { origin: "https://cal.com" });
       Cal("inline", {
         elementOrSelector: "#cal-inline",
-        calLink: "cloudsheer-consulting/30min",
+        calLink: "cloudsheer-consulting/30min?overlayCalendar=true",
         layout: "month_view"
       });
       Cal("ui", {

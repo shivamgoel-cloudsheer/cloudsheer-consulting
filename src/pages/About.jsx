@@ -297,7 +297,7 @@ export default function About() {
           <p className="mb-8" style={{ color: 'rgba(148,196,255,0.80)' }}>
             Whether you are a client or a consultant — we would love to talk.
           </p>
-          <a href="https://cal.com/cloudsheer-consulting/30min" target="_blank" rel="noopener noreferrer" className="btn-gold">
+          <a href="https://cal.com/cloudsheer-consulting/30min?overlayCalendar=true" target="_blank" rel="noopener noreferrer" className="btn-gold">
             Book a Call <ArrowRight className="w-4 h-4" />
           </a>
         </div>

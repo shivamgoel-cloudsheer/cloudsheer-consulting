@@ -48,7 +48,7 @@ function Hero() {
             </p>
 
             <div className="flex flex-wrap gap-4 mb-12 animate-fade-up-3">
-              <a href="https://cal.com/cloudsheer-consulting/30min" target="_blank" rel="noopener noreferrer" className="btn-gold text-base px-7 py-3.5">
+              <a href="https://cal.com/cloudsheer-consulting/30min?overlayCalendar=true" target="_blank" rel="noopener noreferrer" className="btn-gold text-base px-7 py-3.5">
                 Deploy Your First Agent <ArrowRight className="w-5 h-5 animate-bounce-x" />
               </a>
               <Link to="/solutions"
@@ -425,7 +425,7 @@ function CTA() {
           exactly which agents will have the biggest impact — and how fast we can deploy them.
         </p>
         <div className="flex flex-wrap gap-4 justify-center animate-fade-up-3">
-          <a href="https://cal.com/cloudsheer-consulting/30min" target="_blank" rel="noopener noreferrer" className="btn-gold text-base px-8 py-4">
+          <a href="https://cal.com/cloudsheer-consulting/30min?overlayCalendar=true" target="_blank" rel="noopener noreferrer" className="btn-gold text-base px-8 py-4">
             Book Free Discovery Call <ArrowRight className="w-5 h-5 animate-bounce-x" />
           </a>
           <Link to="/solutions"

@@ -27,7 +27,7 @@ const cols = [
       { label: 'Blog & Insights',   to: '/blog' },
       { label: 'Careers',           to: '/careers' },
       { label: 'Contact',           to: '/contact' },
-      { label: 'Free Consultation', to: 'https://cal.com/cloudsheer-consulting/30min', external: true },
+      { label: 'Free Consultation', to: 'https://cal.com/cloudsheer-consulting/30min?overlayCalendar=true', external: true },
     ],
   },
 ]
@@ -46,7 +46,7 @@ export default function Footer() {
               Book a free 30-min Agentforce discovery call with our team.
             </p>
           </div>
-          <a href="https://cal.com/cloudsheer-consulting/30min" target="_blank" rel="noopener noreferrer" className="btn-gold shrink-0 animate-bounce-x">
+          <a href="https://cal.com/cloudsheer-consulting/30min?overlayCalendar=true" target="_blank" rel="noopener noreferrer" className="btn-gold shrink-0 animate-bounce-x">
             Book Free Call <ArrowRight className="w-4 h-4" />
           </a>
         </div>
