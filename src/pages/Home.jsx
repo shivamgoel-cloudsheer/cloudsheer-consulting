@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import {
   ArrowRight, Bot, Zap, ShieldCheck, BarChart3,
   CheckCircle2, ChevronRight, Star, Users, TrendingUp,
-  Sparkles, Clock, RefreshCw, Settings,
+  Sparkles, Clock, Settings,
 } from 'lucide-react'
 
 /* ─── Hero ─────────────────────────────────────────────────── */
@@ -91,76 +91,135 @@ function Hero() {
   )
 }
 
-/* ─── Agent visual ──────────────────────────────────────────── */
+/* ─── Agent visual (Salesforce-style inbox + chat) ─────────── */
 function AgentVisual() {
-  const agents = [
-    { icon: <Bot className="w-5 h-5" />,        label: 'Service Agent',  status: 'Resolving case #4821', dot: '#22C55E', bg: 'rgba(1,118,211,0.12)'  },
-    { icon: <TrendingUp className="w-5 h-5" />, label: 'Sales Agent',    status: 'Qualifying 3 leads',   dot: '#38BDF8', bg: 'rgba(56,189,248,0.10)' },
-    { icon: <RefreshCw className="w-5 h-5" />,  label: 'Ops Agent',      status: 'Updating 12 records',  dot: '#A78BFA', bg: 'rgba(167,139,250,0.10)' },
-  ]
-
   return (
-    <div className="relative w-full max-w-md animate-float">
-      <div className="rounded-2xl p-6"
-        style={{ backgroundColor: 'rgba(255,255,255,0.10)', border: '1px solid rgba(255,255,255,0.18)', backdropFilter: 'blur(20px)', boxShadow: '0 20px 60px rgba(0,0,0,0.25)' }}>
-        {/* Header */}
-        <div className="flex items-center justify-between mb-6">
+    <div className="relative w-full max-w-lg animate-float">
+      {/* ── Sidebar panel (behind, offset left) ── */}
+      <div className="absolute -left-10 top-6 w-24 rounded-2xl overflow-hidden"
+        style={{ height: '320px', background: 'linear-gradient(180deg,#7B4AE2 0%,#5B5FC7 50%,#38BDF8 100%)', boxShadow: '0 20px 50px rgba(0,0,0,0.30)', border: '1px solid rgba(255,255,255,0.15)' }}>
+        {/* Window dots */}
+        <div className="flex items-center gap-1.5 px-3 pt-3 pb-4">
+          <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: '#FF5F57' }} />
+          <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: '#FFBD2E' }} />
+          <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: '#28CA42' }} />
+        </div>
+        {/* Nav items */}
+        {[
+          { icon: <Bot className="w-4 h-4" />, label: 'Agents' },
+          { icon: <Users className="w-4 h-4" />, label: 'Cases' },
+          { icon: <TrendingUp className="w-4 h-4" />, label: 'Leads' },
+        ].map(({ icon, label }) => (
+          <div key={label} className="flex flex-col items-center gap-1 py-3 mx-2 rounded-lg mb-1"
+            style={{ backgroundColor: label === 'Agents' ? 'rgba(255,255,255,0.20)' : 'transparent' }}>
+            <span style={{ color: 'rgba(255,255,255,0.9)' }}>{icon}</span>
+            <span className="text-[9px] font-semibold" style={{ color: 'rgba(255,255,255,0.8)' }}>{label}</span>
+          </div>
+        ))}
+        {/* Inbox list placeholders */}
+        <div className="px-3 mt-2 space-y-2">
+          {[1, 2, 3].map(i => (
+            <div key={i} className="rounded-md p-1.5" style={{ backgroundColor: 'rgba(255,255,255,0.08)' }}>
+              <div className="h-1.5 rounded-full mb-1" style={{ backgroundColor: 'rgba(255,255,255,0.25)', width: '75%' }} />
+              <div className="h-1 rounded-full" style={{ backgroundColor: 'rgba(255,255,255,0.12)', width: '50%' }} />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ── Main chat window ── */}
+      <div className="relative ml-10 rounded-2xl overflow-hidden"
+        style={{ backgroundColor: 'white', boxShadow: '0 25px 60px rgba(0,0,0,0.30)', border: '1px solid rgba(0,0,0,0.08)' }}>
+        {/* Top bar */}
+        <div className="flex items-center justify-between px-5 py-3"
+          style={{ background: 'linear-gradient(135deg,#5B5FC7 0%,#7B4AE2 100%)' }}>
           <div className="flex items-center gap-2">
-            <div className="w-9 h-9 rounded-xl flex items-center justify-center"
+            <span style={{ color: 'rgba(255,255,255,0.7)' }}>←</span>
+            <div className="h-2.5 rounded-full" style={{ backgroundColor: 'rgba(255,255,255,0.35)', width: '120px' }} />
+          </div>
+          <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-md"
+            style={{ backgroundColor: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.2)' }}>
+            <span className="text-[10px] font-semibold text-white">Inbox</span>
+            <span className="text-white text-xs">×</span>
+          </div>
+        </div>
+
+        {/* Chat body */}
+        <div className="px-5 py-4 space-y-5" style={{ backgroundColor: '#F8FAFC' }}>
+          {/* Customer message */}
+          <div className="flex items-start gap-3">
+            <div className="w-9 h-9 rounded-full shrink-0 flex items-center justify-center text-white text-xs font-bold"
               style={{ background: 'linear-gradient(135deg,#0176D3,#38BDF8)' }}>
+              JR
+            </div>
+            <div>
+              <p className="text-xs font-bold" style={{ color: '#032D60' }}>
+                James Rivera <span className="font-normal" style={{ color: '#94A3B8' }}>to Agent</span>
+              </p>
+              <div className="mt-2 rounded-xl px-4 py-3" style={{ backgroundColor: 'white', border: '1px solid #E2E8F0' }}>
+                <p className="text-sm" style={{ color: '#334155' }}>
+                  Our sales team is spending too much time on manual data entry. Can Agentforce help?
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Agent response */}
+          <div className="flex items-start gap-3">
+            <div className="w-9 h-9 rounded-full shrink-0 flex items-center justify-center"
+              style={{ background: 'linear-gradient(135deg,#7B4AE2,#A78BFA)' }}>
               <Sparkles className="w-4 h-4 text-white" />
             </div>
             <div>
-              <p className="text-white font-semibold text-sm">Agentforce Hub</p>
-              <p className="text-xs" style={{ color: 'rgba(186,220,255,0.65)' }}>3 agents active</p>
+              <p className="text-xs font-bold" style={{ color: '#7B4AE2' }}>
+                Agent <span className="font-normal" style={{ color: '#94A3B8' }}>to James Rivera</span>
+              </p>
+              <div className="mt-2 rounded-xl px-4 py-3" style={{ backgroundColor: 'white', border: '1px solid #E2E8F0' }}>
+                <p className="text-sm mb-3" style={{ color: '#334155' }}>
+                  Absolutely. Based on your Salesforce data, here is what an Operations Agent can do:
+                </p>
+                <ul className="space-y-1.5 mb-3">
+                  {[
+                    'Auto-update records after every call',
+                    'Generate pipeline reports weekly',
+                    'Sync data across your CRM & ERP',
+                  ].map(item => (
+                    <li key={item} className="flex items-center gap-2 text-sm">
+                      <CheckCircle2 className="w-3.5 h-3.5 shrink-0" style={{ color: '#7B4AE2' }} />
+                      <span style={{ color: '#334155' }}><strong>{item.split(' ')[0]}</strong> {item.split(' ').slice(1).join(' ')}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-sm" style={{ color: '#334155' }}>
+                  This typically saves teams <strong>12+ hours/week</strong>. Would you like to book a call to see a live demo?
+                </p>
+              </div>
             </div>
           </div>
-          <span className="flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full"
-            style={{ color: '#4ADE80', backgroundColor: 'rgba(74,222,128,0.12)', border: '1px solid rgba(74,222,128,0.25)' }}>
-            <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: '#4ADE80' }} />
-            Live
-          </span>
         </div>
 
-        {/* Agents list */}
-        <div className="space-y-3">
-          {agents.map(({ icon, label, status, dot, bg }) => (
-            <div key={label} className="flex items-center gap-3 rounded-xl p-3 transition-all duration-200"
-              style={{ backgroundColor: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
-              <div className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
-                style={{ backgroundColor: bg, color: 'white' }}>
-                {icon}
-              </div>
-              <div className="flex-1 min-w-0">
-                <p className="text-white text-xs font-semibold">{label}</p>
-                <p className="text-xs truncate" style={{ color: 'rgba(186,220,255,0.60)' }}>{status}</p>
-              </div>
-              <div className="w-2 h-2 rounded-full animate-pulse shrink-0" style={{ backgroundColor: dot }} />
-            </div>
-          ))}
-        </div>
-
-        {/* Stats */}
-        <div className="grid grid-cols-3 gap-3 mt-5 pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
-          {[{ val: '78%', label: 'Auto-resolved' }, { val: '<2s', label: 'Response' }, { val: '∞', label: 'Scale' }].map(({ val, label }) => (
-            <div key={label} className="text-center">
-              <p className="text-white font-bold text-sm">{val}</p>
-              <p className="text-[10px]" style={{ color: 'rgba(186,220,255,0.55)' }}>{label}</p>
-            </div>
-          ))}
+        {/* Bottom action bar */}
+        <div className="px-5 py-3 flex items-center gap-2" style={{ borderTop: '1px solid #E2E8F0', backgroundColor: 'white' }}>
+          <div className="flex-1 rounded-lg px-3 py-2 text-xs" style={{ backgroundColor: '#F1F5F9', color: '#94A3B8' }}>
+            Type a message...
+          </div>
+          <div className="w-8 h-8 rounded-lg flex items-center justify-center"
+            style={{ background: 'linear-gradient(135deg,#7B4AE2,#5B5FC7)' }}>
+            <ArrowRight className="w-3.5 h-3.5 text-white" />
+          </div>
         </div>
       </div>
 
       {/* Floating chips */}
-      <div className="absolute -top-5 -right-5 rounded-xl px-3 py-2 flex items-center gap-2 animate-float-delay"
+      <div className="absolute -top-4 right-2 rounded-xl px-3 py-2 flex items-center gap-2 animate-float-delay"
         style={{ backgroundColor: 'white', boxShadow: '0 4px 20px rgba(1,118,211,0.15)', border: '1px solid rgba(1,118,211,0.12)' }}>
         <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-        <span className="text-xs font-semibold" style={{ color: '#032D60' }}>Case resolved</span>
+        <span className="text-xs font-semibold" style={{ color: '#032D60' }}>Case resolved in 8s</span>
       </div>
-      <div className="absolute -bottom-5 -left-5 rounded-xl px-3 py-2 flex items-center gap-2 animate-float"
+      <div className="absolute -bottom-4 left-2 rounded-xl px-3 py-2 flex items-center gap-2 animate-float"
         style={{ backgroundColor: 'white', boxShadow: '0 4px 20px rgba(1,118,211,0.15)', border: '1px solid rgba(1,118,211,0.12)', animationDelay: '1s' }}>
         <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
-        <span className="text-xs font-semibold" style={{ color: '#032D60' }}>CSAT 5/5</span>
+        <span className="text-xs font-semibold" style={{ color: '#032D60' }}>12 hrs/week saved</span>
       </div>
     </div>
   )
