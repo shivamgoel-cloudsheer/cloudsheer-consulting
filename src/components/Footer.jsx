@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, Linkedin, X, Mail, MapPin, Phone } from 'lucide-react'
+import { ArrowRight, Linkedin, Mail, MapPin, Phone, Store } from 'lucide-react'
 
 const cols = [
   {
@@ -87,11 +87,11 @@ export default function Footer() {
 
             <div className="flex items-center gap-3">
               {[
-                { Icon: Linkedin, label: 'LinkedIn' },
-                { Icon: X,        label: 'X' },
+                { Icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/company/cloud-sheer/' },
+                { Icon: Store,    label: 'AppExchange', href: 'https://appexchange.salesforce.com/appxConsultingListingDetail?listingId=78cae982-5a1e-4fb2-a8c9-b52a994f69d7' },
                 { Icon: Mail,     label: 'Email', href: 'mailto:hello@cloudsheer.com' },
               ].map(({ Icon, label, href }) => (
-                <a key={label} href={href || '#'} aria-label={label}
+                <a key={label} href={href || '#'} target={label !== 'Email' ? '_blank' : undefined} rel={label !== 'Email' ? 'noopener noreferrer' : undefined} aria-label={label}
                   className="w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-200 hover:scale-110"
                   style={{
                     border: '1px solid rgba(255,255,255,0.12)',
