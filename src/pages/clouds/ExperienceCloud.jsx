@@ -93,7 +93,7 @@ export default function ExperienceCloudPage() {
         style={{ background: 'linear-gradient(135deg,#032D60 0%,#0A3F80 55%,#0176D3 100%)' }}>
         <div className="absolute inset-0 bg-grid-dark opacity-40" />
         <div className="glow-dot w-[500px] h-[500px] top-[-150px] right-[-80px]"
-          style={{ backgroundColor: '#06B6D4', opacity: 0.15 }} />
+          style={{ backgroundColor: '#38BDF8', opacity: 0.15 }} />
 
         <div className="section-wrap relative z-10">
           <div className="max-w-3xl mx-auto text-center">

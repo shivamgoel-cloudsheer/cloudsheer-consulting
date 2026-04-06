@@ -20,7 +20,7 @@ const outcomes = [
   { icon: Clock,       value: '40%',     label: 'reduction in time spent on manual reporting and data prep', color: '#F59E0B' },
   { icon: DollarSign,  value: '3x',      label: 'more data-driven decisions per quarter across business units', color: '#6366F1' },
   { icon: Eye,         value: '10.5M+',  label: 'Tableau users worldwide trust it for visual analytics', color: '#06B6D4' },
-  { icon: Database,    value: '26%',     label: 'average revenue increase reported by analytics-driven organisations', color: '#E6205A' },
+  { icon: Database,    value: '26%',     label: 'average revenue increase reported by analytics-driven organisations', color: '#0176D3' },
 ]
 
 const useCases = [
@@ -93,7 +93,7 @@ export default function AnalyticsPage() {
         style={{ background: 'linear-gradient(135deg,#032D60 0%,#0A3F80 55%,#0176D3 100%)' }}>
         <div className="absolute inset-0 bg-grid-dark opacity-40" />
         <div className="glow-dot w-[500px] h-[500px] top-[-150px] right-[-80px]"
-          style={{ backgroundColor: '#E6205A', opacity: 0.12 }} />
+          style={{ backgroundColor: '#38BDF8', opacity: 0.15 }} />
 
         <div className="section-wrap relative z-10">
           <div className="max-w-3xl mx-auto text-center">
