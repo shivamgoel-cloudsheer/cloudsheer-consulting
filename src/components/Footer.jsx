@@ -40,7 +40,7 @@ export default function Footer() {
         <div className="section-wrap py-12 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <p className="text-white font-bold text-xl mb-1">
-              Ready to deploy your first AI Agent?
+              Ready to build your first AI Agent?
             </p>
             <p className="text-sm" style={{ color: 'rgba(148,196,255,0.85)' }}>
               Book a free 30-min Agentforce discovery call with our team.
@@ -66,8 +66,8 @@ export default function Footer() {
             </Link>
             <p className="text-sm leading-relaxed mb-5"
               style={{ color: 'rgba(148,196,255,0.80)' }}>
-              The world's first Agentforce-centric Salesforce consulting partner.
-              Helping businesses deploy autonomous AI that transforms how work gets done.
+              Helping businesses cut costs, close more deals, and scale operations
+              with AI agents built on Salesforce Agentforce.
             </p>
 
             {/* Contact micro */}

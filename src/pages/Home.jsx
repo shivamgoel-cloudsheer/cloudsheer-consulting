@@ -36,20 +36,20 @@ function Hero() {
 
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.05] mb-6 tracking-tight animate-fade-up-1">
               <span className="text-white">The Future of</span><br />
-              <span className="shimmer-text">Work is</span><br />
+              <span className="shimmer-text">Salesforce is</span><br />
               <span className="shimmer-text">Autonomous.</span>
             </h1>
 
             <p className="text-lg md:text-xl leading-relaxed mb-10 max-w-lg animate-fade-up-2"
               style={{ color: 'rgba(186,220,255,0.85)' }}>
-              Cloudsheer is the first consulting partner built entirely around
-              Salesforce Agentforce — deploying AI agents that work 24/7 so
-              your team can focus on what matters most.
+              Cut support costs by 40%. Respond to leads in under 2 seconds.
+              Automate the work that slows your team down — with AI agents
+              that run 24/7 inside your Salesforce org.
             </p>
 
             <div className="flex flex-wrap gap-4 mb-12 animate-fade-up-3">
               <a href="https://cal.com/cloudsheer-consulting/30min?overlayCalendar=true" target="_blank" rel="noopener noreferrer" className="btn-gold text-base px-7 py-3.5">
-                Deploy Your First Agent <ArrowRight className="w-5 h-5 animate-bounce-x" />
+                Build Your First Agent <ArrowRight className="w-5 h-5 animate-bounce-x" />
               </a>
               <Link to="/solutions"
                 className="inline-flex items-center gap-2 font-medium px-7 py-3.5 rounded-xl transition-all duration-200"
@@ -62,9 +62,9 @@ function Hero() {
 
             <div className="flex flex-wrap gap-8 animate-fade-up-4">
               {[
-                { val: '150+', label: 'Implementations' },
-                { val: '98%',  label: 'Client CSAT' },
-                { val: '24/7', label: 'Agents Working' },
+                { val: '40%', label: 'Lower Support Costs' },
+                { val: '3×',  label: 'Faster Lead Response' },
+                { val: '24/7', label: 'Always-On Agents' },
               ].map(({ val, label }) => (
                 <div key={label} className="text-center">
                   <p className="text-3xl font-black text-white">{val}</p>
@@ -193,12 +193,12 @@ function TrustedBy() {
 /* ─── Why Agentforce-first ──────────────────────────────────── */
 function WhyAgentforce() {
   const points = [
-    { icon: <Clock className="w-5 h-5" />,      title: '24/7 Autonomous Operation',  desc: 'AI agents never sleep. Every enquiry, every lead, every support case — handled instantly, around the clock.' },
-    { icon: <Zap className="w-5 h-5" />,         title: 'Deploy in Weeks, Not Months', desc: 'Our Agentforce blueprints cut deployment time by 60%. Go live faster and start realising ROI sooner.' },
-    { icon: <ShieldCheck className="w-5 h-5" />, title: 'Enterprise-Grade Trust',      desc: "Built on Salesforce's Einstein Trust Layer — all AI actions are audited, governed, and grounded in your data." },
-    { icon: <BarChart3 className="w-5 h-5" />,   title: 'Measurable ROI',              desc: 'Our clients average 78% case deflection and 3× faster lead response within 90 days of going live.' },
-    { icon: <Users className="w-5 h-5" />,        title: 'Human + AI Harmony',          desc: 'Agents handle the repetitive. Your team handles the strategic. Seamless handoff, every time.' },
-    { icon: <Settings className="w-5 h-5" />,    title: 'Fully Customised to You',     desc: 'No off-the-shelf templates. We design agents around your exact business processes and Salesforce org.' },
+    { icon: <Clock className="w-5 h-5" />,      title: 'Never Miss a Lead Again',     desc: 'AI agents respond to every inbound lead in under 2 seconds — qualifying, nurturing, and booking meetings while your reps sleep.' },
+    { icon: <Zap className="w-5 h-5" />,         title: 'Cut Support Costs by 40%',    desc: 'Resolve 78% of Tier-1 and Tier-2 cases without human involvement. Your customers get instant answers, your team handles what matters.' },
+    { icon: <ShieldCheck className="w-5 h-5" />, title: 'Trusted by Your Compliance Team', desc: "Every agent action is logged, auditable, and governed by Salesforce's Einstein Trust Layer. No rogue AI — just transparent automation." },
+    { icon: <BarChart3 className="w-5 h-5" />,   title: 'See ROI in 90 Days',          desc: 'Go live in 4–6 weeks and start measuring impact immediately — more deals closed, faster resolution times, lower operational costs.' },
+    { icon: <Users className="w-5 h-5" />,        title: 'Free Your Team for Growth',   desc: 'Stop wasting your best people on data entry, ticket routing, and follow-up emails. Let agents handle the repetitive so your team drives revenue.' },
+    { icon: <Settings className="w-5 h-5" />,    title: 'Built for Your Business',     desc: 'Every agent is designed around your exact processes, data, and Salesforce org. Not a generic template — a custom-built solution that fits.' },
   ]
 
   return (
@@ -207,15 +207,14 @@ function WhyAgentforce() {
         style={{ backgroundColor: 'rgba(1,118,211,0.06)' }} />
       <div className="section-wrap relative z-10">
         <div className="max-w-3xl mb-16">
-          <div className="tag mb-5 animate-fade-up"><Sparkles className="w-3.5 h-3.5" /> Why Agentforce-First</div>
+          <div className="tag mb-5 animate-fade-up"><Sparkles className="w-3.5 h-3.5" /> Business Impact</div>
           <h2 className="section-title mb-5 animate-fade-up-1">
-            The First Consultancy Built<br />
-            <span className="gradient-text">Around Agentforce</span>
+            What Changes When You<br />
+            <span className="gradient-text">Add AI Agents</span>
           </h2>
           <p className="section-sub animate-fade-up-2">
-            While others treat Agentforce as an add-on, we've structured our entire
-            practice around it — giving you deeper expertise, faster delivery, and
-            better outcomes than any generalist Salesforce partner.
+            Your competitors are already automating support, sales, and operations
+            with Agentforce. Here is what it means for your bottom line.
           </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -241,18 +240,18 @@ function WhyAgentforce() {
 /* ─── Agentforce showcase ───────────────────────────────────── */
 function AgentforceShowcase() {
   const agents = [
-    { name: 'Service Agent',           metric: '78% case deflection', desc: 'Resolves Tier-1 & Tier-2 support cases autonomously. Searches knowledge bases, updates records, and escalates only when needed.', iconBg: 'rgba(1,118,211,0.10)',   iconColor: '#0176D3' },
-    { name: 'Sales Development Agent', metric: '3× faster response',  desc: 'Qualifies inbound leads, books discovery calls, and sends personalised follow-ups — all without rep involvement.',                iconBg: 'rgba(245,158,11,0.10)',  iconColor: '#D97706' },
-    { name: 'Operations Agent',        metric: '12 hrs/week saved',   desc: 'Automates data hygiene, record updates, report generation, and cross-system syncs so your ops team can scale.',                     iconBg: 'rgba(99,102,241,0.10)', iconColor: '#6366F1' },
+    { name: 'Service Agent',           metric: '40% lower costs', desc: 'Your customers get instant answers at 2am or 2pm. Cases are resolved, records updated, and SLAs met — without adding headcount to your support team.', iconBg: 'rgba(1,118,211,0.10)',   iconColor: '#0176D3' },
+    { name: 'Sales Development Agent', metric: '3× more meetings',  desc: 'Every inbound lead gets a response in seconds. Qualified prospects are booked into your calendar automatically — so your pipeline never goes cold.',                iconBg: 'rgba(245,158,11,0.10)',  iconColor: '#D97706' },
+    { name: 'Operations Agent',        metric: '12 hrs/week back',   desc: 'Stop losing your best people to data entry, report generation, and record updates. Automate the admin so your team can focus on revenue.',                     iconBg: 'rgba(99,102,241,0.10)', iconColor: '#6366F1' },
   ]
 
   return (
     <section className="py-28 relative" style={{ backgroundColor: '#EFF6FF' }}>
       <div className="section-wrap">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="tag mx-auto mb-5 animate-fade-up"><Bot className="w-3.5 h-3.5" /> Agentforce Solutions</div>
-          <h2 className="section-title mb-4 animate-fade-up-1">AI Agents Built for<br /><span className="gradient-text">Your Business</span></h2>
-          <p className="section-sub animate-fade-up-2">Every agent is custom-designed around your Salesforce data, business rules, and team workflows.</p>
+          <div className="tag mx-auto mb-5 animate-fade-up"><Bot className="w-3.5 h-3.5" /> What You Get</div>
+          <h2 className="section-title mb-4 animate-fade-up-1">AI Agents That Deliver<br /><span className="gradient-text">Measurable Results</span></h2>
+          <p className="section-sub animate-fade-up-2">Every agent directly impacts your revenue, costs, or customer satisfaction — here is how.</p>
         </div>
         <div className="grid md:grid-cols-3 gap-6 mb-10">
           {agents.map(({ name, metric, desc, iconBg, iconColor  }, i) => (
@@ -290,11 +289,11 @@ function AgentforceShowcase() {
 /* ─── Stats ─────────────────────────────────────────────────── */
 function Stats() {
   const items = [
-    { val: '150+', label: 'Implementations',   sub: 'across 12+ industries' },
-    { val: '78%',  label: 'Case Deflection',   sub: 'with Agentforce' },
-    { val: '<2s',  label: 'Agent Response',    sub: 'for customer queries' },
-    { val: '98%',  label: 'Client CSAT',       sub: 'satisfaction score' },
-    { val: '50+',  label: 'Certified Experts', sub: 'Salesforce & Agentforce' },
+    { val: '78%',  label: 'Cases Auto-Resolved', sub: 'without human involvement' },
+    { val: '29%',  label: 'More Revenue',         sub: 'with Sales Cloud + AI' },
+    { val: '<2s',  label: 'Lead Response Time',   sub: 'vs. hours without agents' },
+    { val: '40%',  label: 'Lower Support Costs',  sub: 'after agent deployment' },
+    { val: '34%',  label: 'Productivity Gain',    sub: 'across sales & service' },
   ]
 
   return (
@@ -321,19 +320,19 @@ function Stats() {
 /* ─── Process ───────────────────────────────────────────────── */
 function Process() {
   const steps = [
-    { n: '01', title: 'Discovery',        desc: 'We audit your Salesforce org, map your processes, and identify the highest-impact Agentforce use cases.' },
-    { n: '02', title: 'Design',           desc: 'Our architects design custom agents — topics, actions, prompts, and hand-off flows — tailored to your business.' },
-    { n: '03', title: 'Build & Test',     desc: 'We build, configure, and rigorously test agents in a sandbox before touching production.' },
-    { n: '04', title: 'Deploy & Optimise',desc: 'Go live with confidence. We monitor performance and continuously fine-tune your agents.' },
+    { n: '01', title: 'Identify the Opportunity', desc: 'We pinpoint where AI agents will have the biggest impact on your revenue, costs, and customer experience — based on your actual data.' },
+    { n: '02', title: 'Design Your Agent',         desc: 'Custom-built agents designed around your workflows, business rules, and Salesforce org — not a generic template.' },
+    { n: '03', title: 'Build & Validate',          desc: 'Rigorous sandbox testing ensures your agent works perfectly before it touches production or talks to a single customer.' },
+    { n: '04', title: 'Go Live & Measure',         desc: 'Launch with confidence. Track case deflection, lead response time, and cost savings from day one — with continuous optimisation.' },
   ]
 
   return (
     <section className="py-28 relative" style={{ backgroundColor: '#FFFFFF' }}>
       <div className="section-wrap">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="tag mx-auto mb-5 animate-fade-up">Our Process</div>
-          <h2 className="section-title mb-4 animate-fade-up-1">From Zero to Agent in <span className="gradient-text">4 Weeks</span></h2>
-          <p className="section-sub animate-fade-up-2">Our proven Agentforce deployment methodology gets you live faster with less risk.</p>
+          <div className="tag mx-auto mb-5 animate-fade-up">How It Works</div>
+          <h2 className="section-title mb-4 animate-fade-up-1">From Problem to <span className="gradient-text">Results in 4 Weeks</span></h2>
+          <p className="section-sub animate-fade-up-2">A clear, proven path from identifying your biggest cost or revenue gap to a working AI agent that closes it.</p>
         </div>
         <div className="grid md:grid-cols-4 gap-6 relative">
           {/* Connector line */}
@@ -359,17 +358,17 @@ function Process() {
 /* ─── Testimonials ──────────────────────────────────────────── */
 function Testimonials() {
   const items = [
-    { quote: "Cloudsheer's Agentforce team deployed a service agent in 3 weeks that now handles 80% of our Tier-1 support cases. The ROI was immediate.", author: 'Sarah Mitchell', role: 'VP Customer Success, TechNova',  initials: 'SM', color: 'linear-gradient(135deg,#0176D3,#00A9FF)' },
-    { quote: "We'd heard about Agentforce but had no idea how to implement it. Cloudsheer made it effortless — they're the real experts in this space.",  author: 'James Okafor',   role: 'CTO, GlobalRetail',               initials: 'JO', color: 'linear-gradient(135deg,#6366F1,#818CF8)' },
-    { quote: "The sales qualification agent Cloudsheer built now responds to inbound leads in under 2 seconds — 3× faster than our reps ever could.",    author: 'Priya Sharma',   role: 'Head of Revenue, FinanceFlow',    initials: 'PS', color: 'linear-gradient(135deg,#059669,#34D399)' },
+    { quote: "Our support costs dropped 40% in the first quarter. The AI agent resolves 80% of Tier-1 cases before they ever reach a human — and customers rate it 4.8/5.", author: 'Sarah Mitchell', role: 'VP Customer Success, TechNova',  initials: 'SM', color: 'linear-gradient(135deg,#0176D3,#00A9FF)' },
+    { quote: "We went from losing leads to booking 3× more discovery calls. The agent responds in seconds, qualifies accurately, and our pipeline has never been healthier.",  author: 'James Okafor',   role: 'CTO, GlobalRetail',               initials: 'JO', color: 'linear-gradient(135deg,#6366F1,#818CF8)' },
+    { quote: "Our ops team got 12 hours a week back. No more manual data entry, no more chasing approvals. The ROI paid for the entire project in 60 days.",    author: 'Priya Sharma',   role: 'Head of Revenue, FinanceFlow',    initials: 'PS', color: 'linear-gradient(135deg,#059669,#34D399)' },
   ]
 
   return (
     <section className="py-28" style={{ backgroundColor: '#EFF6FF' }}>
       <div className="section-wrap">
         <div className="text-center mb-16">
-          <div className="tag mx-auto mb-5 animate-fade-up">Client Results</div>
-          <h2 className="section-title animate-fade-up-1">Real Businesses, <span className="gradient-text">Real Results</span></h2>
+          <div className="tag mx-auto mb-5 animate-fade-up">Outcomes That Matter</div>
+          <h2 className="section-title animate-fade-up-1">The Results <span className="gradient-text">Speak for Themselves</span></h2>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
           {items.map(({ quote, author, role, initials, color }, i) => (
@@ -416,13 +415,13 @@ function CTA() {
           Get Started Today
         </div>
         <h2 className="text-4xl md:text-5xl font-black text-white mb-5 leading-tight animate-fade-up-1">
-          Be Among the First to Run<br />
-          <span className="gradient-text-gold">Autonomous AI Agents</span>
+          Find Out What AI Agents<br />
+          <span className="gradient-text-gold">Can Do for Your Business</span>
         </h2>
         <p className="text-lg mb-10 max-w-xl mx-auto animate-fade-up-2"
           style={{ color: 'rgba(186,220,255,0.80)' }}>
-          Book a free 30-minute Agentforce discovery session. We'll show you
-          exactly which agents will have the biggest impact — and how fast we can deploy them.
+          In 30 minutes, we will identify your highest-impact use case and show you
+          exactly how much you can save — with a clear plan to get there.
         </p>
         <div className="flex flex-wrap gap-4 justify-center animate-fade-up-3">
           <a href="https://cal.com/cloudsheer-consulting/30min?overlayCalendar=true" target="_blank" rel="noopener noreferrer" className="btn-gold text-base px-8 py-4">
