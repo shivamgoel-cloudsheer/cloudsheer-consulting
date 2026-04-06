@@ -25,14 +25,30 @@ const offices = [
   { city: 'New York', flag: '🇺🇸' },
 ]
 
-// 28 team member placeholders — replace photo/name/role/linkedin with real data
-const team = Array.from({ length: 28 }, (_, i) => ({
-  id: i + 1,
-  name: 'Team Member',
-  role: 'Salesforce Consultant',
-  photo: null,           // replace with e.g. '/team/john-doe.jpg'
-  linkedin: '#',         // replace with real LinkedIn profile URL
-}))
+const team = [
+  { id: 1,  name: 'Tushar Sharma',      role: 'CEO',                              photo: null, linkedin: '#' },
+  { id: 2,  name: 'Rajat Sharma',       role: 'Technical Delivery Head',          photo: null, linkedin: '#' },
+  { id: 3,  name: 'Bharat Sharma',      role: 'Head of Operations — UK',          photo: null, linkedin: '#' },
+  { id: 4,  name: 'Shubham Bansal',     role: 'Growth & Marketing — Head',        photo: null, linkedin: '#' },
+  { id: 5,  name: 'Shainkey Pawaiya',   role: 'Project Manager',                  photo: null, linkedin: '#' },
+  { id: 6,  name: 'Pranay Pandey',      role: 'Team Lead — QA',                   photo: null, linkedin: '#' },
+  { id: 7,  name: 'Arihanta Jain',      role: 'Assistant Manager HR',             photo: null, linkedin: '#' },
+  { id: 8,  name: 'Arti Bisht',         role: 'Senior Accountant',                photo: null, linkedin: '#' },
+  { id: 9,  name: 'Shivam Goel',        role: 'Strategy & Growth — Associate',    photo: null, linkedin: '#' },
+  { id: 10, name: 'Prateek Jain',       role: 'Growth & Marketing — Associate',   photo: null, linkedin: '#' },
+  { id: 11, name: 'Tammana Gautam',     role: 'BA — Salesforce',                  photo: null, linkedin: '#' },
+  { id: 12, name: 'Vishal Yadav',       role: 'BA — Salesforce',                  photo: null, linkedin: '#' },
+  { id: 13, name: 'Abhishek Kaplesh',   role: 'Salesforce Developer',             photo: null, linkedin: '#' },
+  { id: 14, name: 'Ishit Bansal',       role: 'Salesforce Developer',             photo: null, linkedin: '#' },
+  { id: 15, name: 'Tania Arora',        role: 'Salesforce Developer',             photo: null, linkedin: '#' },
+  { id: 16, name: 'Arun Kumar',         role: 'Associate Salesforce Developer',   photo: null, linkedin: '#' },
+  { id: 17, name: 'Divyansh Sharma',    role: 'Associate Salesforce Developer',   photo: null, linkedin: '#' },
+  { id: 18, name: 'Gaurav Khanna',      role: 'Associate Salesforce Developer',   photo: null, linkedin: '#' },
+  { id: 19, name: 'Piyush Kumar Singh', role: 'Associate Salesforce Developer',   photo: null, linkedin: '#' },
+  { id: 20, name: 'Rahul Babbar',       role: 'Associate Salesforce Developer',   photo: null, linkedin: '#' },
+  { id: 21, name: 'Himanshu Yadav',     role: 'QA',                               photo: null, linkedin: '#' },
+  { id: 22, name: 'Manish Pavadiya',    role: 'QA',                               photo: null, linkedin: '#' },
+]
 
 export default function About() {
   return (
@@ -172,7 +188,7 @@ export default function About() {
             <div className="grid grid-cols-2 gap-5">
               {[
                 { value: '60+',    label: 'Salesforce Certifications',     color: '#0176D3' },
-                { value: '28',     label: 'Team Members Globally',         color: '#6366F1' },
+                { value: '22',     label: 'Team Members Globally',         color: '#6366F1' },
                 { value: '4',      label: 'Global Office Locations',       color: '#06B6D4' },
                 { value: '150+',   label: 'Successful Implementations',    color: '#F59E0B' },
               ].map(({ value, label, color }) => (
@@ -221,7 +237,7 @@ export default function About() {
             </div>
             <h2 className="section-title mb-4">Meet the Team</h2>
             <p className="section-sub max-w-2xl mx-auto">
-              28 experts across Dallas, Delhi, London, and New York — united by a shared passion
+              22 experts across Dallas, Delhi, London, and New York — united by a shared passion
               for Salesforce, Agentforce, and delivering outcomes that matter.
             </p>
           </div>
@@ -278,12 +294,11 @@ export default function About() {
           </div>
 
           <p className="text-center text-sm mt-10" style={{ color: '#94A3B8' }}>
-            Headshots and names will be added shortly. Reach out to{' '}
+            Want to connect with a specific team member? Reach out to{' '}
             <a href="mailto:hello@cloudsheer.com" className="font-medium"
               style={{ color: '#0176D3' }}>
               hello@cloudsheer.com
-            </a>{' '}
-            to connect with a specific consultant.
+            </a>
           </p>
         </div>
       </section>
